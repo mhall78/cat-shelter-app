@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adopt {{ cat.name }}</title>
+</head>
+<body>
+
+    <h1>Adopt {{ cat.name }}</h1>
+
+    {% if cat.image_url %}
+    <img src="{{ cat.image_url }}" width="200">
+    {% endif %}
+
+    <p><strong>Age:</strong> {{ cat.age }}</p>
+    <p><strong>Breed:</strong> {{ cat.breed }}</p>
+    <p><strong>Personality:</strong> {{ cat.personality }}</p>
+
+    <form method="POST">
+        <label>Your Name:</label><br>
+        <input type="text" name="applicant_name" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Housing Type:</label><br>
+        <input type="text" name="housing_type"><br><br>
+
+        <label>Do you have other pets?</label><br>
+        <input type="text" name="other_pets"><br><br>
+
+        <label>Why do you want to adopt this cat?</label><br>
+        <textarea name="message" rows="5" cols="40"></textarea><br><br>
+
+        <button type="submit">Submit Adoption Request</button>
+    </form>
+
+    <br>
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

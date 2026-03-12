@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cat Shelter</title>
+</head>
+<body>
+
+    <h1>Available Cats for Adoption</h1>
+
+    {% for cat in cats %}
+    <div style="border:1px solid black; padding:10px; margin:10px;">
+        <h2>{{ cat.name }}</h2>
+
+        {% if cat.image_url %}
+        <img src="{{ cat.image_url }}" width="200">
+        {% endif %}
+
+        <p><strong>Age:</strong> {{ cat.age }}</p>
+        <p><strong>Breed:</strong> {{ cat.breed }}</p>
+        <p><strong>Personality:</strong> {{ cat.personality }}</p>
+        <p><strong>Vaccinated:</strong> {{ cat.vaccinated }}</p>
+        <p>{{ cat.description }}</p>
+
+        <a href="/adopt/{{ cat.id }}">
+            <button>Adopt This Cat</button>
+        </a>
+    </div>
+    {% endfor %}
+
+</body>
+</html>
